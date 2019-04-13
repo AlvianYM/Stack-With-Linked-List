@@ -1,0 +1,6 @@
+# TUGAS PEMROGRAMAN TERSTRUKTUR
+
+## Implementasi Stack dengan Linked List
+```
+ALVIAN YUSUF MIZAN 1817051053
+```
