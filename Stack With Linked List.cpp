@@ -75,17 +75,50 @@ class MyStack {
     }
 };
 
-int main()
-{
-    MyStack s;
-    s.push(8);
-    s.push(3);
-    s.push(2);
-    s.push(9);
-    s.pop();
-    s.pop();
-    s.pop();
-    s.pop();
-    s.printStackList();
-    return 0;
+int main() {
+    int pilihan, n;
+   	char ulang;
+   	MyStack s;
+   	
+	do {
+		system ("cls");
+		cout<<"||PROGRAM STACK WITH LINKED LIST||"<<endl<<endl;
+		if (head != NULL){
+			s.printStackList();
+		}
+		cout<<"\nDaftar Menu :"<<endl;	
+		cout<<"1. Isi"<<endl;
+		cout<<"2. Hapus"<<endl;
+		cout<<"3. Keluar"<<endl;
+		cout<<"Pilih: "; cin>>pilihan;
+		switch (pilihan) {
+			case 1:
+				if(!isFull()) {
+					cout<<"Masukkan Angka : ";
+					cin>>n;
+					s.push(n);
+            			}
+				else {
+					cout<<"\nStack Penuh!"<<endl;
+				}
+				break;
+		
+			case 2:
+				s.pop();
+				break;
+			
+			case 3:
+				cout<<"\nTerima Kasih Telah Mencoba :)";
+				exit(0);
+				break;
+		
+			default:
+				cout<<"\n Pilihan tidak tersedia.\n";		
+		}
+		cout<<"\nIngin Melanjutkan?(Y/N)\n";
+      		cin>>ulang;
+	} 
+		while (ulang=='y' || ulang=='Y');
+	
+	return 0;
 }
