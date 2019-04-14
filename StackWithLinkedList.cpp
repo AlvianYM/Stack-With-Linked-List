@@ -63,22 +63,22 @@ class MyStack {
     void printStackList() {
         TNode *bantu = head;
         if (!isEmpty()) {
-            cout<<"Elemen di stack:"<<endl;
+		cout<<"Elemen di stack:"<<endl;
 		while (bantu != NULL) {
 			cout<<bantu->data<<endl;
 			bantu = bantu->next;
 		}
 	}
-		else {
-			cout<<"Stack Kosong"<<endl;
-		}
+	else {
+		cout<<"Stack Kosong"<<endl;
+	}
     }
 };
 
 int main() {
-    int pilihan, n;
-   	char ulang;
-   	MyStack s;
+	int pilihan, n;
+    	char ulang;
+    	MyStack s;
    	
 	do {
 		system ("cls");
