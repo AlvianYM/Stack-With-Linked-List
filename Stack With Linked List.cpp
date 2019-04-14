@@ -25,7 +25,7 @@ bool isFull() {
 		TNode *bantu;
 		int a;
 		bantu = head;
-		while (bantu != '\0') {
+		while (bantu != NULL) {
 		 	a++;
 	 		bantu = bantu->next;
 		}
@@ -34,46 +34,44 @@ bool isFull() {
 }
 
 class MyStack {
-    private:
-    Element stack[MAX_STACK_SIZE];
-
-    int top=-1;
-
     public:
-    bool isEmpty(){
-        return (top<0); 
+    void push(int newdata) {
+        TNode *baru;
+	baru = new TNode;
+	baru->data = newdata;
+	baru->next = NULL;
+	    if(isEmpty() == 1) {
+		    baru->next = head;
+		    head = baru;
+	    }
+	    else {
+		    baru->next = head;
+		    head=baru;
+	    }
     }
-    bool isFull(){
-        return top == MAX_STACK_SIZE-1;
+	
+    void pop() {
+        if (!isEmpty()) {
+		cout<<endl<<"Data "<<head->data<<" telah terhapus."<<endl;
+		head = head->next;
+		}
+	else {
+		cout<<"Stack kosong"<<endl;
+    	}
     }
-    void push(int data){
-        Element item;
-        item.data=data;
-        if (!isFull()){
-            stack[++top]=item;
-        } else {
-            std::cout<<"Stack Penuh"<<std::endl;
-        }
-    }
-    Element pop(){
-        Element item;
-        if (!isEmpty()){
-            item = stack[top--];
-        } else {
-            std::cout<<"Stack Kosong"<<std::endl;
-        }
-        return item;
-    }
-    void printStackList(){
-        if (!isEmpty()){
-            for (int i=top;i>=0;i--)
-                std::cout<<stack[i].data<<std::endl;
-        } else {
-            std::cout<<"Stack Kosong"<<std::endl;
-        }
-    }
-    int getTop(){
-        return top;
+	
+    void printStackList() {
+        TNode *bantu = head;
+        if (!isEmpty()) {
+            cout<<"Elemen di stack:"<<endl;
+		while (bantu != NULL) {
+			cout<<bantu->data<<endl;
+			bantu = bantu->next;
+		}
+	}
+		else {
+			cout<<"Stack Kosong"<<endl;
+		}
     }
 };
 
