@@ -85,7 +85,6 @@ int main() {
 		system ("cls");
 		cout<<"||PROGRAM STACK WITH LINKED LIST||"<<endl<<endl;
 		s.printStackList();
-		}
 		cout<<"\nDaftar Menu :"<<endl;	
 		cout<<"1. Isi"<<endl;
 		cout<<"2. Hapus"<<endl;
