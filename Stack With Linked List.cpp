@@ -1,9 +1,37 @@
 #include <iostream>
 #define MAX_STACK_SIZE 10
+using namespace std;
 
-struct Element {
-    int data;
+struct TNode {
+	int data;
+	TNode *next;
 };
+
+TNode *head;
+
+void init() {
+	head == NULL;
+}
+
+bool isEmpty() {
+	return head == NULL;
+}
+
+bool isFull() {
+	if (isEmpty() == 1) {
+		return false;
+	}
+	else {
+		TNode *bantu;
+		int a;
+		bantu = head;
+		while (bantu != '\0') {
+		 	a++;
+	 		bantu = bantu->next;
+		}
+		return a > MAX_STACK_SIZE-1;
+	}
+}
 
 class MyStack {
     private:
